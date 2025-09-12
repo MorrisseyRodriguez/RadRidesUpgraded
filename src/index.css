@@ -1,0 +1,946 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add container constraints */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Ensure content doesn't overflow */
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Global Typography - Inter Font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+p, span, div, button, input, textarea, select, label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+/* Modern luxury typography */
+.font-black {
+  font-weight: 900;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+/* Enhanced readability for body text */
+p {
+  line-height: 1.6;
+}
+
+/* Improved button text readability */
+button {
+  line-height: 1.4;
+}
+
+/* Form elements consistency */
+input, textarea, select {
+  line-height: 1.4;
+}
+
+/* Text shadow utility for better visibility */
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Luxury promo text styling - with always visible blue underline and enhanced shadow */
+.luxury-promo-text {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.luxury-promo-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #2874f0, #0066ff);
+}
+
+.luxury-promo-text:hover::after {
+  background: linear-gradient(90deg, #0066ff, #2874f0);
+  height: 3px;
+}
+
+/* Fleet Typography - Matching Screenshot Styling */
+.fleet-brand {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: #6b7280;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.fleet-model {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #111827;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.fleet-discount {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #059669;
+}
+
+/* Mobile Fleet Typography */
+.fleet-brand-mobile {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #6b7280;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.fleet-model-mobile {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #111827;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+/* Section Headings */
+.font-inter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Car Detail Page Typography */
+.car-detail-brand {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  color: #6b7280;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.car-detail-model {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #111827;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+/* Form Typography */
+.form-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #374151;
+}
+
+.form-input {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* Button Typography */
+.btn-primary {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  transition: all 0.2s ease-in-out;
+  background-color: #0066FF !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  background-color: #0055FF !important;
+}
+
+/* Navigation Typography */
+.nav-link {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+}
+
+/* Testimonial Typography */
+.testimonial-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #111827;
+  letter-spacing: -0.025em;
+}
+
+.testimonial-stats {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.testimonial-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Mobile fleet card hover glow effect */
+@media (max-width: 1023px) {
+  .mobile-fleet-card:hover {
+    box-shadow: 0 0 30px rgba(0, 119, 255, 0.6);
+  }
+}
+
+/* Luxury feature cards - back to original dark theme */
+.luxury-feature-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.luxury-feature-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(40, 116, 240, 0.3);
+  background: linear-gradient(135deg, #1a1a1a 0%, #1f1f1f 100%);
+}
+
+/* Scale utility class */
+.hover\:scale-102:hover {
+  --tw-scale-x: 1.02;
+  --tw-scale-y: 1.02;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* Video loading optimization - Enhanced for immediate loading */
+video {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Preload critical resources */
+@media (prefers-reduced-motion: no-preference) {
+  video {
+    transform: translateZ(0);
+  }
+}
+
+/* Optimize video rendering on mobile */
+@media (max-width: 768px) {
+  video {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+/* Fleet Carousel Styles - Enhanced for Smooth Navigation */
+.fleet-carousel {
+  overflow: visible !important;
+  padding: 0 60px; /* Increased padding for arrow space */
+}
+
+.fleet-carousel .swiper-wrapper {
+  align-items: stretch;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.fleet-carousel .swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Enhanced free mode scrolling with smooth navigation */
+.fleet-carousel.swiper-free-mode > .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin: 0;
+}
+
+/* Smooth momentum scrolling */
+.fleet-carousel .swiper-wrapper {
+  will-change: transform;
+}
+
+/* Navigation arrow styles */
+.fleet-carousel-prev,
+.fleet-carousel-next {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fleet-carousel-prev:hover,
+.fleet-carousel-next:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.fleet-carousel-prev:active,
+.fleet-carousel-next:active {
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Disabled state for arrows */
+.fleet-carousel-prev.swiper-button-disabled,
+.fleet-carousel-next.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Smooth slide transitions on arrow click */
+.fleet-carousel .swiper-wrapper {
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1279px) {
+  .fleet-carousel {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .fleet-carousel {
+    padding: 0 40px;
+  }
+}
+
+/* Enhanced smooth scrolling for better UX */
+.fleet-carousel .swiper-slide {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Prevent text selection during drag */
+.fleet-carousel .swiper-wrapper {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Arrow hover effects with smooth scaling */
+.fleet-carousel-prev:hover .lucide,
+.fleet-carousel-next:hover .lucide {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Testimonials Carousel Styles - Enhanced for Smooth Navigation */
+.testimonials-carousel {
+  overflow: visible !important;
+  padding: 0 60px; /* Increased padding for arrow space */
+}
+
+.testimonials-carousel .swiper-wrapper {
+  align-items: stretch;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.testimonials-carousel .swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Enhanced free mode scrolling with smooth navigation */
+.testimonials-carousel.swiper-free-mode > .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin: 0;
+}
+
+/* Smooth momentum scrolling */
+.testimonials-carousel .swiper-wrapper {
+  will-change: transform;
+}
+
+/* Navigation arrow styles */
+.testimonials-carousel-prev,
+.testimonials-carousel-next {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testimonials-carousel-prev:hover,
+.testimonials-carousel-next:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonials-carousel-prev:active,
+.testimonials-carousel-next:active {
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Disabled state for arrows */
+.testimonials-carousel-prev.swiper-button-disabled,
+.testimonials-carousel-next.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Smooth slide transitions on arrow click */
+.testimonials-carousel .swiper-wrapper {
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Responsive adjustments for testimonials */
+@media (max-width: 1279px) {
+  .testimonials-carousel {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .testimonials-carousel {
+    padding: 0 40px;
+  }
+}
+
+/* Enhanced smooth scrolling for better UX */
+.testimonials-carousel .swiper-slide {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Prevent text selection during drag */
+.testimonials-carousel .swiper-wrapper {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Arrow hover effects with smooth scaling */
+.testimonials-carousel-prev:hover .lucide,
+.testimonials-carousel-next:hover .lucide {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* ===== ENHANCED THUMBNAIL FUNCTIONALITY STYLES ===== */
+
+/* Hide scrollbars for thumbnail galleries */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Desktop Thumbnail Styles - Enhanced for faster loading */
+.thumbnail-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.thumbnail-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease; /* Faster transition */
+  z-index: 1;
+}
+
+.thumbnail-button:hover::before {
+  transform: translateX(100%);
+}
+
+/* Active thumbnail styles */
+.active-thumbnail {
+  position: relative;
+}
+
+.active-thumbnail::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Mobile Thumbnail Styles */
+.thumbnail-button-mobile {
+  position: relative;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.active-thumbnail-mobile {
+  position: relative;
+}
+
+.active-thumbnail-mobile::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Main image transition styles - Faster transitions */
+.main-car-image {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Enhanced focus styles for accessibility */
+.thumbnail-button:focus,
+.thumbnail-button-mobile:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Smooth hover effects for thumbnails */
+.thumbnail-button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail-button-mobile:active {
+  transform: scale(0.95);
+}
+
+/* Loading state for main image */
+.main-car-image[style*="opacity: 0.7"] {
+  filter: blur(1px);
+}
+
+/* Responsive thumbnail sizing */
+@media (max-width: 640px) {
+  .thumbnail-button-mobile {
+    width: 4rem; /* 64px */
+    height: 3rem; /* 48px */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .thumbnail-button {
+    width: 5rem; /* 80px */
+    height: 4rem; /* 64px */
+  }
+}
+
+/* Enhanced visual feedback - Faster transitions */
+.thumbnail-button:hover img,
+.thumbnail-button-mobile:active img {
+  transform: scale(1.05);
+  transition: transform 0.15s ease; /* Faster transition */
+}
+
+/* Smooth transitions for all thumbnail interactions - Faster */
+.thumbnail-button,
+.thumbnail-button-mobile {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Faster transition */
+}
+
+.thumbnail-button img,
+.thumbnail-button-mobile img {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Faster transition */
+}
+
+/* Fix for crisp icons and prevent blur */
+.search-icon-crisp {
+  filter: none !important;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Image counter styling */
+.image-counter {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Enhanced image loading optimization */
+img[loading="eager"] {
+  content-visibility: auto;
+}
+
+img[fetchpriority="high"] {
+  priority: high;
+}
+
+/* Preload critical images */
+.fleet-carousel img:nth-child(-n+4),
+.main-car-image {
+  content-visibility: auto;
+  contain-intrinsic-size: 400px 300px;
+}
+
+/* Image loading states */
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Error state styling */
+.image-error {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+}
+
+/* Retry button styling */
+.retry-button {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-button:hover {
+  background: white;
+  border-color: #9ca3af;
+}
+
+/* Animation for the pulsing effect */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Animation for the ping effect */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Custom animations for the orbital timeline */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+/* Backdrop blur */
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
+/* Custom gradients */
+.bg-gradient-orbital {
+  background: linear-gradient(to bottom right, #6366f1, #3b82f6, #14b8a6);
+}
+
+/* Z-index utilities */
+.z-10 {
+  z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+/* Custom shadows */
+.shadow-orbital {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Custom transforms */
+.scale-125 {
+  transform: scale(1.25);
+}
+
+.scale-150 {
+  transform: scale(1.5);
+}
+
+/* Custom opacity values */
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+/* Custom border opacity */
+.border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.border-white\/30 {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.border-white\/40 {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Custom background opacity */
+.bg-black\/90 {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.bg-white\/50 {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Custom text opacity */
+.text-white\/70 {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text-white\/80 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Marquee animations for 3D testimonials */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+/* Smooth scrolling performance optimizations */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimize rendering performance */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* GPU acceleration for smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Glowing blue text effect */
+.glow-blue-text {
+  text-shadow: 
+    0 0 5px rgba(59, 130, 246, 0.8),
+    0 0 10px rgba(59, 130, 246, 0.6),
+    0 0 15px rgba(59, 130, 246, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.3);
+  animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+  from {
+    text-shadow: 
+      0 0 5px rgba(59, 130, 246, 0.8),
+      0 0 10px rgba(59, 130, 246, 0.6),
+      0 0 15px rgba(59, 130, 246, 0.4),
+      0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  to {
+    text-shadow: 
+      0 0 8px rgba(59, 130, 246, 1),
+      0 0 15px rgba(59, 130, 246, 0.8),
+      0 0 25px rgba(59, 130, 246, 0.6),
+      0 0 35px rgba(59, 130, 246, 0.4);
+  }
+}
+
+/* Offer card blue underglow effect - Fixed version */
+.offer-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.offer-card.clicked {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px rgba(59, 130, 246, 0.8),
+    0 0 60px rgba(59, 130, 246, 0.6),
+    0 0 90px rgba(59, 130, 246, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.8);
+  animation: blue-glow-pulse 2s ease-out;
+}
+
+@keyframes blue-glow-pulse {
+  0% {
+    box-shadow: 
+      0 0 10px rgba(59, 130, 246, 0.4),
+      0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(59, 130, 246, 1),
+      0 0 80px rgba(59, 130, 246, 0.8),
+      0 0 120px rgba(59, 130, 246, 0.6),
+      0 15px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px);
+  }
+  100% {
+    box-shadow: 
+      0 0 15px rgba(59, 130, 246, 0.5),
+      0 8px 25px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+  }
+}
