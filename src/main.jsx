@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import LogRocket from 'logrocket'
 
 import App from './App.jsx'
 import CarDetail from './components/CarDetail.jsx'
@@ -14,6 +15,9 @@ import InsurancePolicy from './components/InsurancePolicy.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import { carsData } from './data/cars.jsx'
 import './index.css'
+
+// Initialize LogRocket
+LogRocket.init('vo2tda/analytics-for-rad-rides-bcr')
 
 const router = createBrowserRouter([
   {
