@@ -398,7 +398,7 @@ export default function CarDetail() {
               </div>
 
               {/* Contact Form */}
-              <div className="bg-gray-50 rounded-lg p-6 mb-8">
+              <div className="bg-white rounded-lg p-6 mb-8 border border-gray-200 shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Book This Car</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <input type="hidden" name="request_type" value="booking" />
