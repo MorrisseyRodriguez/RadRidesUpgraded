@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Phone, Mail, Calendar, Gauge, Users, Clock, ChevronLeft, ChevronRight, ChevronDown, Send, Play, Shield, Truck, CircleCheck as CheckCircle, X, Cog, Car } from \'lucide-react';
+import { ArrowLeft, Phone, Mail, Calendar, Gauge, Users, Clock, ChevronLeft, ChevronRight, ChevronDown, Send, Play, Shield, Truck, CircleCheck as CheckCircle, X, Cog, Car } from 'lucide-react';
 
 export default function CarDetail() {
   const car = useLoaderData();
