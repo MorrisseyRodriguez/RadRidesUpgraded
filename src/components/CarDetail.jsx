@@ -126,16 +126,16 @@ export default function CarDetail() {
 
       // 1. Internal email to you/your team
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        'Rad Rides BCR Inquiries',
+        'template_8r2jylj',
         tempForm,
         'A-HdMpoJwY4IWoljY'
       );
 
       // 2. Auto-reply to customer
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
+        'Rad Rides BCR Inquiries',
+        'template_vtv2jgm',
         tempForm,
         'A-HdMpoJwY4IWoljY'
       );
