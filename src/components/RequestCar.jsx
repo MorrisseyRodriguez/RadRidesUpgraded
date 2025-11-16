@@ -78,18 +78,18 @@ export default function RequestCar() {
 
       // 1. Internal email to you/your team
       await emailjs.sendForm(
-        'service_wnqhqzj',
-        'template_8r2jylj',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         tempForm,
-        'ogiyDIPnkWU0u3pqp'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       // 2. Auto-reply to customer
       await emailjs.sendForm(
-        'Rad Rides BCR Inquiries',
-        'template_vtv2jgm',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
         tempForm,
-        'ogiyDIPnkWU0u3pqp'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       toast.success('Car request sent successfully!');
