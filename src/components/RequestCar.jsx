@@ -86,7 +86,7 @@ export default function RequestCar() {
 
       // 2. Auto-reply to customer
       await emailjs.sendForm(
-        'service_wnqhqzj',
+        'Rad Rides BCR Inquiries',
         'template_vtv2jgm',
         tempForm,
         'ogiyDIPnkWU0u3pqp'
