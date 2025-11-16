@@ -1,12 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Phone, Mail, Calendar, Gauge, Users, Clock, ChevronLeft, ChevronRight, ChevronDown, Send, Play, Shield, Truck, CircleCheck as CheckCircle, X, Cog, Car } from 'lucide-react';
+import toast, { Toaster } from 'react-hot-toast';
+import DateRangePicker from './ui/DateRangePicker';
 
 export default function CarDetail() {
   const car = useLoaderData();
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(false);
+  const [showBookingForm, setShowBookingForm] = useState(false);
+  const [formData, setFormData] = useState({
+    request_type: 'booking',
+    vehicle: '',
+    start_date: '',
+    end_date: '',
+    tell_us_about_your_request: '',
+    name: '',
+    email: '',
+    phone: '',
+    first_timer_discount: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!car) {
     return (
@@ -52,8 +67,122 @@ export default function CarDetail() {
     setIsImageLoading(false);
   };
 
+  // Initialize form with car name
+  useEffect(() => {
+    if (car?.name) {
+      setFormData(prev => ({
+        ...prev,
+        vehicle: car.name
+      }));
+    }
+  }, [car?.name]);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (checked ? 'Yes' : '') : value
+    }));
+  };
+
+  const handleDateSelect = (startDate, endDate) => {
+    setFormData(prev => ({
+      ...prev,
+      start_date: startDate,
+      end_date: endDate
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Get current timestamp for the time field
+    const currentTime = new Date().toLocaleString();
+
+    try {
+      // Create form data with all required fields for EmailJS
+      const emailData = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        vehicle: formData.vehicle || car?.name || 'Not specified',
+        start_date: formData.start_date || 'Not specified',
+        end_date: formData.end_date || 'Not specified',
+        tell_us_about_your_request: formData.tell_us_about_your_request,
+        first_timer_discount: formData.first_timer_discount || 'No',
+        time: currentTime
+      };
+
+      // Create a temporary form for EmailJS
+      const tempForm = document.createElement('form');
+      Object.keys(emailData).forEach(key => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = emailData[key];
+        tempForm.appendChild(input);
+      });
+
+      // 1. Internal email to you/your team
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        tempForm,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      // 2. Auto-reply to customer
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
+        tempForm,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success('Booking request sent successfully!');
+
+      // Track conversion in Google Ads
+      if (window.gtag) {
+        window.gtag('event', 'conversion', { 
+          'send_to': `${import.meta.env.VITE_GOOGLE_ADS_ID}/${import.meta.env.VITE_GOOGLE_ADS_CONVERSION_LABEL}` 
+        });
+      }
+
+      // Track form submission in Google Analytics 4
+      if (window.gtag) {
+        window.gtag('event', 'form_submission', {
+          'form_name': 'Car Detail Page Form',
+          'vehicle_of_interest': formData.vehicle || car?.name || 'Not specified',
+          'request_type': 'booking',
+          'first_timer_discount': formData.first_timer_discount || 'No'
+        });
+      }
+
+      setFormData({
+        request_type: 'booking',
+        vehicle: car?.name || '',
+        start_date: '',
+        end_date: '',
+        tell_us_about_your_request: '',
+        name: '',
+        email: '',
+        phone: '',
+        first_timer_discount: ''
+      });
+
+      // Close form after successful submission
+      setShowBookingForm(false);
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast.error('Failed to send booking request. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const scrollToContact = () => {
-    navigate('/', { state: { scrollTo: 'contact' } });
+    setShowBookingForm(true);
   };
 
   // Get pricing based on car name
@@ -76,6 +205,8 @@ export default function CarDetail() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Toaster position="top-right" />
+      
       {/* Hero Section with Car Image */}
       <div className="relative h-[70vh] lg:h-screen">
         {/* Back Button */}
@@ -278,6 +409,112 @@ export default function CarDetail() {
           </div>
         </div>
       </div>
+
+      {/* Booking Form Modal */}
+      {showBookingForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+          <div className="relative bg-gray-900 rounded-xl shadow-2xl border border-gray-700 max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+            {/* Close button */}
+            <button
+              onClick={() => setShowBookingForm(false)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-colors z-10"
+              aria-label="Close modal"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            {/* Modal Content */}
+            <div className="p-8">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-bold text-white mb-2 font-inter">
+                  Book {car?.name}
+                </h2>
+                <p className="text-gray-300 text-sm">
+                  Fill out the form below and we'll get back to you right away
+                </p>
+              </div>
+
+              {/* Form */}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input type="hidden" name="request_type" value="booking" />
+                <input type="hidden" name="vehicle" value={car?.name || ''} />
+
+                <DateRangePicker
+                  onDateChange={(dates) => {
+                    setFormData(prev => ({
+                      ...prev,
+                      start_date: dates.startDate,
+                      end_date: dates.endDate
+                    }));
+                  }}
+                  initialStartDate={formData.start_date}
+                  initialEndDate={formData.end_date}
+                  placeholder="Select rental dates"
+                />
+
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your name"
+                  className="w-full bg-gray-800 border border-gray-600 p-3 text-white text-sm placeholder-gray-400 rounded focus:border-blue-500 focus:ring-0 transition-colors"
+                />
+
+                <textarea
+                  name="tell_us_about_your_request"
+                  value={formData.tell_us_about_your_request}
+                  onChange={handleChange}
+                  required
+                  placeholder="Tell us about your rental needs"
+                  className="w-full bg-gray-800 border border-gray-600 p-3 text-white h-24 text-sm placeholder-gray-400 rounded focus:border-blue-500 focus:ring-0 transition-colors resize-none"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your email"
+                  className="w-full bg-gray-800 border border-gray-600 p-3 text-white text-sm placeholder-gray-400 rounded focus:border-blue-500 focus:ring-0 transition-colors"
+                />
+
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your phone number"
+                  className="w-full bg-gray-800 border border-gray-600 p-3 text-white text-sm placeholder-gray-400 rounded focus:border-blue-500 focus:ring-0 transition-colors"
+                />
+
+                <label className="flex items-center gap-3 text-sm text-white">
+                  <input 
+                    type="checkbox" 
+                    name="first_timer_discount" 
+                    checked={formData.first_timer_discount === 'Yes'}
+                    onChange={handleChange}
+                    className="w-4 h-4 text-blue-600 bg-gray-800 border-gray-600 rounded focus:ring-blue-500"
+                  />
+                  This is my first time renting with Rad Rides
+                </label>
+
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-semibold btn-primary"
+                >
+                  {isSubmitting ? 'Sending...' : 'Book This Car Now'}
+                  <Send className="w-4 h-4" />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
