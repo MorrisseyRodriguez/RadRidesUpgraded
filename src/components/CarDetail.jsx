@@ -126,18 +126,18 @@ export default function CarDetail() {
 
       // 1. Internal email to you/your team
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        'service_wnqhqzj',
+        'template_8r2jylj',
         tempForm,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        'ogiyDIPnkWU0u3pqp'
       );
 
       // 2. Auto-reply to customer
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
+        'service_wnqhqzj',
+        'template_vtv2jgm',
         tempForm,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        'ogiyDIPnkWU0u3pqp'
       );
 
       toast.success('Booking request sent successfully!');
