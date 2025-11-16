@@ -73,7 +73,7 @@ import { useLoaderData, useNavigate } from 'react-routerimport { ArrowLeft, Phon
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Car Image */}
-      <div className="relative h-screen">
+      <div className="relative h-[70vh] lg:h-screen">
         {/* Back Button */}
         <div className="absolute top-8 left-8 z-50">
           <button 
@@ -131,7 +131,7 @@ import { useLoaderData, useNavigate } from 'react-routerimport { ArrowLeft, Phon
           )}
 
           {/* Car Info Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-8">
             <div className="max-w-7xl mx-auto">
               <div className="car-detail-brand text-white/70 mb-2">
                 {car.name.split(' ')[0]}
@@ -150,7 +150,7 @@ import { useLoaderData, useNavigate } from 'react-routerimport { ArrowLeft, Phon
               {/* CTA Button */}
               <button
                 onClick={scrollToContact}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center gap-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center gap-2 shadow-lg"
               >
                 <Phone className="w-5 h-5" />
                 Reserve Now
@@ -215,12 +215,12 @@ import { useLoaderData, useNavigate } from 'react-routerimport { ArrowLeft, Phon
       )}
 
       {/* Car Details Section */}
-      <div className="py-20 bg-white">
+      <div className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Column - Overview */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Overview</h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-8">
                 {car.overview}
               </p>
@@ -244,7 +244,7 @@ import { useLoaderData, useNavigate } from 'react-routerimport { ArrowLeft, Phon
 
             {/* Right Column - Features & Booking */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Features</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Features</h2>
               <ul className="space-y-3 mb-8">
                 {car.features?.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -265,7 +265,7 @@ import { useLoaderData, useNavigate } from 'react-routerimport { ArrowLeft, Phon
               {/* Book Now Button */}
               <button
                 onClick={scrollToContact}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
               >
                 <Phone className="w-5 h-5" />
                 Book This Car
