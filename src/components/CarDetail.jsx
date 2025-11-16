@@ -397,13 +397,95 @@ export default function CarDetail() {
                 </p>
               </div>
 
-              {/* Book Now Button */}
+              {/* Contact Form */}
+              <div className="bg-gray-50 rounded-lg p-6 mb-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Book This Car</h3>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <input type="hidden" name="request_type" value="booking" />
+                  <input type="hidden" name="vehicle" value={car?.name || ''} />
+
+                  <DateRangePicker
+                    onDateChange={(dates) => {
+                      setFormData(prev => ({
+                        ...prev,
+                        start_date: dates.startDate,
+                        end_date: dates.endDate
+                      }));
+                    }}
+                    initialStartDate={formData.start_date}
+                    initialEndDate={formData.end_date}
+                    placeholder="Select rental dates"
+                    className="w-full"
+                  />
+
+                  <div className="grid grid-cols-1 gap-4">
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your name"
+                      className="w-full bg-white border border-gray-300 p-3 text-gray-900 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-0 transition-colors"
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your email"
+                      className="w-full bg-white border border-gray-300 p-3 text-gray-900 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-0 transition-colors"
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your phone number"
+                      className="w-full bg-white border border-gray-300 p-3 text-gray-900 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-0 transition-colors"
+                    />
+                  </div>
+
+                  <textarea
+                    name="tell_us_about_your_request"
+                    value={formData.tell_us_about_your_request}
+                    onChange={handleChange}
+                    required
+                    placeholder="Tell us about your rental needs"
+                    className="w-full bg-white border border-gray-300 p-3 text-gray-900 h-24 rounded-lg resize-none placeholder-gray-500 focus:border-blue-500 focus:ring-0 transition-colors"
+                  />
+
+                  <label className="flex items-center gap-3 text-sm text-gray-700">
+                    <input 
+                      type="checkbox" 
+                      name="first_timer_discount" 
+                      checked={formData.first_timer_discount === 'Yes'}
+                      onChange={handleChange}
+                      className="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
+                    />
+                    This is my first time renting with Rad Rides
+                  </label>
+
+                  <button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed font-semibold btn-primary"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Book This Car Now'}
+                    <Send className="w-4 h-4" />
+                  </button>
+                </form>
+              </div>
+
+              {/* Alternative Contact Button */}
               <button
                 onClick={scrollToContact}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                className="w-full bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                Book This Car
+                Or Call/Text Us
               </button>
             </div>
           </div>
