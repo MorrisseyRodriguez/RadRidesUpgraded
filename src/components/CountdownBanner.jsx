@@ -99,7 +99,7 @@ export default function CountdownBanner() {
         {/* Right side - Action buttons */}
         <div className="flex items-center gap-2 sm:gap-3">
           <span className="text-white text-sm sm:text-base font-medium">
-            Fastest way to book
+            SUMMER DEAL: Special Offers Available
           </span>
           <a
             href="tel:+18189750220"

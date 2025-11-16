@@ -235,13 +235,13 @@ function App() {
           </div>
 
           <div className="flex flex-row justify-center items-center gap-8 md:gap-16">
-            {/* 10% Off Summer Deal */}
+            {/* Special Summer Deal */}
             <div className="text-center group cursor-pointer">
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white text-lg font-bold">%</span>
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-blue-500 mb-1">10%</div>
-              <div className="text-gray-400 text-sm mb-2">Off First Rentals</div>
+              <div className="text-2xl md:text-3xl font-bold text-blue-500 mb-1">SAVE</div>
+              <div className="text-gray-400 text-sm mb-2">On Multi-Day Rentals</div>
             </div>
 
             {/* Free Delivery */}
