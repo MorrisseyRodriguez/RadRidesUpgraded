@@ -37,8 +37,7 @@ export default function OtherRentals() {
                 Fiat 500 Abarth
               </div>
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-gray-500 line-through text-lg">$350</span>
-                <span className="text-white text-xl font-bold">$315</span>
+                <span className="text-white text-xl font-bold">$350</span>
               </div>
               <Link 
                 to="/cars/fiat-500-abarth"
@@ -70,8 +69,7 @@ export default function OtherRentals() {
                 Wrangler Rubicon 4xe
               </div>
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-gray-500 line-through text-lg">$400</span>
-                <span className="text-white text-xl font-bold">$360</span>
+                <span className="text-white text-xl font-bold">$400</span>
               </div>
               <Link 
                 to="/cars/jeep-wrangler-rubicon-4xe"

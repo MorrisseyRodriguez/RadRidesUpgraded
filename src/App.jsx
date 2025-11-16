@@ -132,8 +132,7 @@ function App() {
                   McLaren 570S Spider
                 </div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-gray-500 line-through text-lg">$1,000</span>
-                  <span className="text-white text-xl font-bold">$900</span>
+                  <span className="text-white text-xl font-bold">$1,000</span>
                 </div>
                 <Link 
                   to="/cars/mclaren-570s-spider"
@@ -164,8 +163,7 @@ function App() {
                   Corvette C8 Z06
                 </div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-gray-500 line-through text-lg">$750</span>
-                  <span className="text-white text-xl font-bold">$675</span>
+                  <span className="text-white text-xl font-bold">$750</span>
                 </div>
                 <Link 
                   to="/cars/corvette-c8-z06"
@@ -196,8 +194,7 @@ function App() {
                   Escalade Sport Platinum
                 </div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-gray-500 line-through text-lg">$450</span>
-                  <span className="text-white text-xl font-bold">$405</span>
+                  <span className="text-white text-xl font-bold">$450</span>
                 </div>
                 <Link 
                   to="/cars/cadillac-escalade-sport-platinum"
