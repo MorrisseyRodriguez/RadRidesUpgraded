@@ -81,7 +81,7 @@ export default function RequestCar() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         tempForm,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        'A-HdMpoJwY4IWoljY'
       );
 
       // 2. Auto-reply to customer
@@ -89,7 +89,7 @@ export default function RequestCar() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
         tempForm,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        'A-HdMpoJwY4IWoljY'
       );
 
       toast.success('Car request sent successfully!');
