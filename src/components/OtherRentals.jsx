@@ -36,14 +36,11 @@ export default function OtherRentals() {
               <div className="text-xl font-bold text-white leading-tight mb-2 uppercase tracking-wide">
                 Fiat 500 Abarth
               </div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-white text-xl font-bold">$350</span>
-              </div>
               <Link 
                 to="/cars/fiat-500-abarth"
                 className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
               >
-                RESERVE NOW
+                REQUEST A QUOTE
               </Link>
             </div>
           </div>
@@ -68,14 +65,11 @@ export default function OtherRentals() {
               <div className="text-xl font-bold text-white leading-tight mb-2 uppercase tracking-wide">
                 Wrangler Rubicon 4xe
               </div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-white text-xl font-bold">$400</span>
-              </div>
               <Link 
                 to="/cars/jeep-wrangler-rubicon-4xe"
                 className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
               >
-                RESERVE NOW
+                REQUEST A QUOTE
               </Link>
             </div>
           </div>

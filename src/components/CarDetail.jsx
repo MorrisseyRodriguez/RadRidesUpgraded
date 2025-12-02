@@ -274,13 +274,6 @@ export default function CarDetail() {
               <h1 className="car-detail-model text-white mb-4">
                 {car.name}
               </h1>
-              
-              {/* Pricing */}
-              <div className="mb-6">
-                <div className="text-3xl font-bold text-white">
-                  {getPricing(car.name)}/Day
-                </div>
-              </div>
 
               {/* CTA Button */}
               <button
@@ -288,7 +281,7 @@ export default function CarDetail() {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center gap-2 shadow-lg"
               >
                 <Phone className="w-5 h-5" />
-                Reserve Now
+                Request a Quote
               </button>
             </div>
           </div>
@@ -473,7 +466,7 @@ export default function CarDetail() {
                     disabled={isSubmitting}
                     className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed font-semibold btn-primary"
                   >
-                    {isSubmitting ? 'Sending...' : 'Book This Car Now'}
+                    {isSubmitting ? 'Sending...' : 'Request Quote'}
                     <Send className="w-4 h-4" />
                   </button>
                 </form>
@@ -485,7 +478,7 @@ export default function CarDetail() {
                 className="w-full bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                Or Call/Text Us
+                Call/Text for Quote
               </button>
             </div>
           </div>
@@ -509,7 +502,7 @@ export default function CarDetail() {
             <div className="p-8">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-white mb-2 font-inter">
-                  Book {car?.name}
+                  Request Quote for {car?.name}
                 </h2>
                 <p className="text-gray-300 text-sm">
                   Fill out the form below and we'll get back to you right away
@@ -589,7 +582,7 @@ export default function CarDetail() {
                   disabled={isSubmitting}
                   className="w-full bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-semibold btn-primary"
                 >
-                  {isSubmitting ? 'Sending...' : 'Book This Car Now'}
+                  {isSubmitting ? 'Sending...' : 'Request Quote'}
                   <Send className="w-4 h-4" />
                 </button>
               </form>

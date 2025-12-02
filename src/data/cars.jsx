@@ -9,7 +9,6 @@ export const carsData = {
     acceleration: '3.2s',
     horsepower: '562 HP',
     seats: 2,
-    depositAmount: '$1,500',
     features: [
       'Retractable hardtop convertible',
       'Carbon fiber construction',
@@ -28,7 +27,6 @@ export const carsData = {
     acceleration: '2.6s',
     horsepower: '670 HP',
     seats: 2,
-    depositAmount: '$1,500',
     features: [
       'Mid-engine layout',
       'Naturally aspirated V8',
@@ -47,7 +45,6 @@ export const carsData = {
     acceleration: '6.1s',
     horsepower: '420 HP',
     seats: 8,
-    depositAmount: '$500',
     features: [
       'Premium leather seating',
       '38-inch curved OLED display',
@@ -66,7 +63,6 @@ export const carsData = {
     acceleration: '6.8s',
     horsepower: '160 HP',
     seats: 4,
-    depositAmount: '$300',
     features: [
       'Turbocharged engine',
       'Sport-tuned suspension',
@@ -85,7 +81,6 @@ export const carsData = {
     acceleration: '6.0s',
     horsepower: '375 HP',
     seats: 5,
-    depositAmount: '$400',
     features: [
       'Plug-in hybrid powertrain',
       'Removable doors and roof',

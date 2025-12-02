@@ -131,14 +131,11 @@ function App() {
                 <div className="text-xl font-bold text-white leading-tight mb-2 uppercase tracking-wide">
                   McLaren 570S Spider
                 </div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-white text-xl font-bold">$1,000</span>
-                </div>
                 <Link 
                   to="/cars/mclaren-570s-spider"
                   className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
                 >
-                  RESERVE NOW
+                  REQUEST A QUOTE
                 </Link>
               </div>
             </div>
@@ -162,14 +159,11 @@ function App() {
                 <div className="text-xl font-bold text-white leading-tight mb-2 uppercase tracking-wide">
                   Corvette C8 Z06
                 </div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-white text-xl font-bold">$750</span>
-                </div>
                 <Link 
                   to="/cars/corvette-c8-z06"
                   className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
                 >
-                  RESERVE NOW
+                  REQUEST A QUOTE
                 </Link>
               </div>
             </div>
@@ -193,14 +187,11 @@ function App() {
                 <div className="text-xl font-bold text-white leading-tight mb-2 uppercase tracking-wide">
                   Escalade Sport Platinum
                 </div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-white text-xl font-bold">$450</span>
-                </div>
                 <Link 
                   to="/cars/cadillac-escalade-sport-platinum"
                   className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
                 >
-                  RESERVE NOW
+                  REQUEST A QUOTE
                 </Link>
               </div>
             </div>
