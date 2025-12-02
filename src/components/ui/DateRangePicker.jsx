@@ -216,7 +216,7 @@ const DateRangePicker = ({
           placeholder={placeholder}
           onClick={handleInputClick}
           readOnly
-          className="w-full p-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-0 cursor-pointer transition-colors duration-200 pr-10"
+          className="w-full p-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-0 cursor-pointer transition-colors duration-200 pr-10"
           aria-expanded={isOpen}
           aria-haspopup="dialog"
         />
@@ -226,7 +226,7 @@ const DateRangePicker = ({
           <button
             type="button"
             onClick={handleClear}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 hover:text-white transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 hover:text-gray-600 transition-colors"
             aria-label="Clear dates"
           >
             <X className="w-4 h-4" />
