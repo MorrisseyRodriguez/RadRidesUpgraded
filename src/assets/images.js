@@ -8,7 +8,7 @@ import c8Corvette1000068219 from './C8 Corvette/1000068219.jpg';
 import c8Corvette1000068220 from './C8 Corvette/1000068220.jpg';
 
 // Escalade SP Images
-import escaladeNewPrimary from './Escalade SP/20241114_163926.jpg';
+import escaladeNewPrimary from './Escalade SP/20251007_180143.jpg';
 import escaladeNewMain from './Escalade SP/Qzjwmer4RqivcrwA0gqJEg.avif';
 import escaladeNewImg1 from './Escalade SP/TGDeeWCkSkG8E-MZo6mVRA.avif';
 import escaladeNewImg2 from './Escalade SP/0FkoB61IRlyM_BEUb2w1OA.avif';
@@ -20,6 +20,11 @@ import escaladeNewImg7 from './Escalade SP/Iek3RltYRaml6T9lzVJVcQ.avif';
 import escaladeNewImg8 from './Escalade SP/yfpBi4DGR9CLNqo3sdzKXQ.avif';
 import escaladeNewImg9 from './Escalade SP/Ziqwl0CCQGGMGo744URHNA.avif';
 import escaladeNewImg10 from './Escalade SP/3ah3XN-hQGWxGyuz_yQRMQ.avif';
+import escaladeNew2024_1 from './Escalade SP/20251007_180053.jpg';
+import escaladeNew2024_2 from './Escalade SP/20251007_180002.jpg';
+import escaladeNew2024_3 from './Escalade SP/20240628_065940.jpg';
+import escaladeNew2024_4 from './Escalade SP/20240627_200027.jpg';
+import escaladeNew2024_5 from './Escalade SP/20240627_200020.jpg';
 
 // McLaren 570s Spider Images
 import mclaren570sNewMain from './McLaren 570s/20240702_073956.jpg';
@@ -105,18 +110,23 @@ export const images = {
   escalade: {
     main: escaladeNewPrimary,
     gallery: [
-      escaladeNewPrimary,        // 1st - 20241114_163926.jpg
-      escaladeNewMain,           // 2nd - Qzjwmer4RqivcrwA0gqJEg.avif
-      escaladeNewImg1,           // 3rd - TGDeeWCkSkG8E-MZo6mVRA.avif
-      escaladeNewImg2,           // 4th - 0FkoB61IRlyM_BEUb2w1OA.avif
-      escaladeNewImg3,           // 5th - G15c_zfbRhOtla3GNeNGKg.avif
-      escaladeNewImg4,           // 6th - 5LunFCU9RKK4_mIvbMFWoA.avif
-      escaladeNewImg5,           // 7th - IBQtZdJDTjiRidLNtaCqHw.avif
-      escaladeNewImg6,           // 8th - vKO7LBbGTvS7epBTZiTFUQ.avif
-      escaladeNewImg7,           // 9th - Iek3RltYRaml6T9lzVJVcQ.avif
-      escaladeNewImg8,           // 10th - yfpBi4DGR9CLNqo3sdzKXQ.avif
-      escaladeNewImg9,           // 11th - Ziqwl0CCQGGMGo744URHNA.avif
-      escaladeNewImg10           // 12th - 3ah3XN-hQGWxGyuz_yQRMQ.avif
+      escaladeNewPrimary,        // 1st - 20251007_180143.jpg (NEW COVER)
+      escaladeNew2024_1,         // 2nd - 20251007_180053.jpg (NEW)
+      escaladeNew2024_2,         // 3rd - 20251007_180002.jpg (NEW)
+      escaladeNew2024_3,         // 4th - 20240628_065940.jpg (NEW)
+      escaladeNew2024_4,         // 5th - 20240627_200027.jpg (NEW)
+      escaladeNew2024_5,         // 6th - 20240627_200020.jpg (NEW)
+      escaladeNewMain,           // 7th - Qzjwmer4RqivcrwA0gqJEg.avif
+      escaladeNewImg1,           // 8th - TGDeeWCkSkG8E-MZo6mVRA.avif
+      escaladeNewImg2,           // 9th - 0FkoB61IRlyM_BEUb2w1OA.avif
+      escaladeNewImg3,           // 10th - G15c_zfbRhOtla3GNeNGKg.avif
+      escaladeNewImg4,           // 11th - 5LunFCU9RKK4_mIvbMFWoA.avif
+      escaladeNewImg5,           // 12th - IBQtZdJDTjiRidLNtaCqHw.avif
+      escaladeNewImg6,           // 13th - vKO7LBbGTvS7epBTZiTFUQ.avif
+      escaladeNewImg7,           // 14th - Iek3RltYRaml6T9lzVJVcQ.avif
+      escaladeNewImg8,           // 15th - yfpBi4DGR9CLNqo3sdzKXQ.avif
+      escaladeNewImg9,           // 16th - Ziqwl0CCQGGMGo744URHNA.avif
+      escaladeNewImg10           // 17th - 3ah3XN-hQGWxGyuz_yQRMQ.avif
     ],
     fallbacks: highQualityFallbacks.rrCullinan
   },
