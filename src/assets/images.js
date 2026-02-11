@@ -9,6 +9,7 @@ import c8Corvette1000068220 from './C8 Corvette/1000068220.jpg';
 
 // Escalade SP Images
 import escaladeNewPrimary from './Escalade SP/20251007_180143.jpg';
+import escaladeNewCard from './Escalade SP/20251007_180002.jpg';
 import escaladeNew2024_1 from './Escalade SP/20251007_180053.jpg';
 import escaladeNew2024_2 from './Escalade SP/20251007_180002.jpg';
 import escaladeNew2024_3 from './Escalade SP/20240628_065940.jpg';
@@ -97,7 +98,7 @@ export const images = {
     fallbacks: highQualityFallbacks.corvette
   },
   escalade: {
-    main: escaladeNewPrimary,
+    main: escaladeNewCard,
     gallery: [
       escaladeNewPrimary,        // 1st - 20251007_180143.jpg (NEW COVER)
       escaladeNew2024_1,         // 2nd - 20251007_180053.jpg (NEW)
