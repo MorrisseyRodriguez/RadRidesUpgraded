@@ -9,17 +9,6 @@ import c8Corvette1000068220 from './C8 Corvette/1000068220.jpg';
 
 // Escalade SP Images
 import escaladeNewPrimary from './Escalade SP/20251007_180143.jpg';
-import escaladeNewMain from './Escalade SP/Qzjwmer4RqivcrwA0gqJEg.avif';
-import escaladeNewImg1 from './Escalade SP/TGDeeWCkSkG8E-MZo6mVRA.avif';
-import escaladeNewImg2 from './Escalade SP/0FkoB61IRlyM_BEUb2w1OA.avif';
-import escaladeNewImg3 from './Escalade SP/G15c_zfbRhOtla3GNeNGKg.avif';
-import escaladeNewImg4 from './Escalade SP/5LunFCU9RKK4_mIvbMFWoA.avif';
-import escaladeNewImg5 from './Escalade SP/IBQtZdJDTjiRidLNtaCqHw.avif';
-import escaladeNewImg6 from './Escalade SP/vKO7LBbGTvS7epBTZiTFUQ.avif';
-import escaladeNewImg7 from './Escalade SP/Iek3RltYRaml6T9lzVJVcQ.avif';
-import escaladeNewImg8 from './Escalade SP/yfpBi4DGR9CLNqo3sdzKXQ.avif';
-import escaladeNewImg9 from './Escalade SP/Ziqwl0CCQGGMGo744URHNA.avif';
-import escaladeNewImg10 from './Escalade SP/3ah3XN-hQGWxGyuz_yQRMQ.avif';
 import escaladeNew2024_1 from './Escalade SP/20251007_180053.jpg';
 import escaladeNew2024_2 from './Escalade SP/20251007_180002.jpg';
 import escaladeNew2024_3 from './Escalade SP/20240628_065940.jpg';
@@ -116,17 +105,6 @@ export const images = {
       escaladeNew2024_3,         // 4th - 20240628_065940.jpg (NEW)
       escaladeNew2024_4,         // 5th - 20240627_200027.jpg (NEW)
       escaladeNew2024_5,         // 6th - 20240627_200020.jpg (NEW)
-      escaladeNewMain,           // 7th - Qzjwmer4RqivcrwA0gqJEg.avif
-      escaladeNewImg1,           // 8th - TGDeeWCkSkG8E-MZo6mVRA.avif
-      escaladeNewImg2,           // 9th - 0FkoB61IRlyM_BEUb2w1OA.avif
-      escaladeNewImg3,           // 10th - G15c_zfbRhOtla3GNeNGKg.avif
-      escaladeNewImg4,           // 11th - 5LunFCU9RKK4_mIvbMFWoA.avif
-      escaladeNewImg5,           // 12th - IBQtZdJDTjiRidLNtaCqHw.avif
-      escaladeNewImg6,           // 13th - vKO7LBbGTvS7epBTZiTFUQ.avif
-      escaladeNewImg7,           // 14th - Iek3RltYRaml6T9lzVJVcQ.avif
-      escaladeNewImg8,           // 15th - yfpBi4DGR9CLNqo3sdzKXQ.avif
-      escaladeNewImg9,           // 16th - Ziqwl0CCQGGMGo744URHNA.avif
-      escaladeNewImg10           // 17th - 3ah3XN-hQGWxGyuz_yQRMQ.avif
     ],
     fallbacks: highQualityFallbacks.rrCullinan
   },
