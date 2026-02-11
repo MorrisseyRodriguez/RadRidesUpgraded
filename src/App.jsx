@@ -135,7 +135,7 @@ function App() {
                   to="/cars/mclaren-570s-spider"
                   className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
                 >
-                  REQUEST A QUOTE
+                  VIEW RIDE
                 </Link>
               </div>
             </div>
@@ -163,7 +163,7 @@ function App() {
                   to="/cars/corvette-c8-z06"
                   className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
                 >
-                  REQUEST A QUOTE
+                  VIEW RIDE
                 </Link>
               </div>
             </div>
@@ -191,7 +191,7 @@ function App() {
                   to="/cars/cadillac-escalade-sport-platinum"
                   className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
                 >
-                  REQUEST A QUOTE
+                  VIEW RIDE
                 </Link>
               </div>
             </div>

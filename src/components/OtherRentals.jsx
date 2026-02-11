@@ -40,7 +40,7 @@ export default function OtherRentals() {
                 to="/cars/fiat-500-abarth"
                 className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
               >
-                REQUEST A QUOTE
+                VIEW RIDE
               </Link>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function OtherRentals() {
                 to="/cars/jeep-wrangler-rubicon-4xe"
                 className="w-full bg-transparent border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium text-center block uppercase tracking-wider"
               >
-                REQUEST A QUOTE
+                VIEW RIDE
               </Link>
             </div>
           </div>
