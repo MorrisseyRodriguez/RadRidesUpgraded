@@ -108,7 +108,6 @@ export default function Layout() {
             <div className="px-4 pt-4 pb-4 space-y-2">
               <NavLink to="/" className="block">Home</NavLink>
               <NavLink onClick={() => scrollToSection('contact')} className="block">Contact Us</NavLink>
-              <NavLink to="/other-rentals" className="block">Other Rentals</NavLink>
               <NavLink to="/request-car" className="block">Request a Car</NavLink>
               <NavLink to="/about" className="block">About Us</NavLink>
               <NavLink to="/faqs" className="block">FAQs</NavLink>
