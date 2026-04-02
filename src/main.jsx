@@ -8,7 +8,6 @@ import CarDetail from './components/CarDetail.jsx'
 import Layout from './components/Layout.jsx'
 import FAQ from './components/FAQ.jsx'
 import About from './components/About.jsx'
-import OtherRentals from './components/OtherRentals.jsx'
 import RequestCar from './components/RequestCar.jsx'
 import PrivacyPolicy from './components/PrivacyPolicy.jsx'
 import InsurancePolicy from './components/InsurancePolicy.jsx'
@@ -51,10 +50,6 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-      },
-      {
-        path: "/other-rentals",
-        element: <OtherRentals />,
       },
       {
         path: "/request-car",

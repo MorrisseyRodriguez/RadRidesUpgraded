@@ -168,16 +168,6 @@ function App() {
               </div>
             </div>
           </div>
-          
-          <div className="text-center mt-12 space-y-4">
-            <Link 
-              to="/other-rentals"
-              className="inline-flex items-center gap-2 bg-transparent border border-white text-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300 font-medium uppercase tracking-wider"
-            >
-              View Other Rentals
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
         </div>
       </div>
 
