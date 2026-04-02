@@ -19,24 +19,6 @@ export const carsData = {
     ],
     overview: 'The McLaren 570S Spider combines breathtaking performance with open-air driving pleasure. This convertible supercar features a twin-turbo V8 engine, carbon fiber construction, and McLaren\'s signature dihedral doors. Perfect for those who want to experience pure automotive excellence.'
   },
-  'corvette-c8-z06': {
-    name: 'Corvette C8 Z06',
-    image: images.c8Corvette.main,
-    fallbacks: images.c8Corvette.fallbacks,
-    images: images.c8Corvette.gallery,
-    acceleration: '2.6s',
-    horsepower: '670 HP',
-    seats: 2,
-    features: [
-      'Mid-engine layout',
-      'Naturally aspirated V8',
-      'Track-focused aerodynamics',
-      'Magnetic ride control',
-      'Performance data recorder',
-      'Carbon fiber wheels available'
-    ],
-    overview: 'The C8 Z06 represents the pinnacle of American sports car engineering. With its naturally aspirated 5.5L V8 and mid-engine layout, this Corvette delivers track-ready performance with everyday usability.'
-  },
   'cadillac-escalade-sport-platinum': {
     name: 'Cadillac Escalade Sport Platinum',
     image: images.escalade.main,
