@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, CheckCircle, Car, Clipboard, MapPin, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, CircleCheck as CheckCircle, Car, Clipboard, MapPin, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { images } from '../assets/images';
 import corvette1000068218 from '../assets/C8 Corvette/1000068218.webp';
