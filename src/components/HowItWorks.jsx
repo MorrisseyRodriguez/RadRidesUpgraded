@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronDown, CheckCircle, Car, Clipboard, MapPin, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { images } from '../assets/images';
-import corvette1000068218 from '../assets/C8 Corvette/1000068218.jpg';
+import corvette1000068218 from '../assets/C8 Corvette/1000068218.webp';
 
 const insuranceCompanies = [
   'USAA',
@@ -102,6 +102,8 @@ export default function HowItWorks() {
         <img 
           src={corvette1000068218}
           alt="Corvette background"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70"></div>

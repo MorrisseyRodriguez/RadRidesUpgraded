@@ -1,46 +1,27 @@
-// C8 Corvette Images
-import c8CorvetteMain from './C8 Corvette/Corvette sunny photo.webp';
-import c8CorvetteDSC01405 from './C8 Corvette/DSC01405.jpg';
-import c8CorvetteDSC01434 from './C8 Corvette/DSC01434.jpg';
-import c8Corvette1000068217 from './C8 Corvette/1000068217.jpg';
-import c8Corvette1000068218 from './C8 Corvette/1000068218.jpg';
-import c8Corvette1000068219 from './C8 Corvette/1000068219.jpg';
-import c8Corvette1000068220 from './C8 Corvette/1000068220.jpg';
+// Logo Image - always loaded (used in nav)
+import logoImage from './Logo/RadRides_Logo-removebg-preview.webp';
 
-// Escalade SP Images
-import escaladeNewPrimary from './Escalade SP/20251007_180143.jpg';
-import escaladeNewCard from './Escalade SP/20251007_180002.jpg';
-import escaladeNew2024_1 from './Escalade SP/20251007_180053.jpg';
-import escaladeNew2024_2 from './Escalade SP/20251007_180002.jpg';
-import escaladeNew2024_3 from './Escalade SP/20240628_065940.jpg';
-import escaladeNew2024_4 from './Escalade SP/20240627_200027.jpg';
-import escaladeNew2024_5 from './Escalade SP/20240627_200020.jpg';
+// Fleet card images - loaded on home page (with responsive variants)
+import c8CorvetteMain from './C8 Corvette/1000068220.webp';
+import c8CorvetteMain400 from './C8 Corvette/1000068220-400w.webp';
+import c8CorvetteMain800 from './C8 Corvette/1000068220-800w.webp';
+import escaladeMain from './Escalade SP/20251007_180002.webp';
+import escaladeMain400 from './Escalade SP/20251007_180002-400w.webp';
+import escaladeMain800 from './Escalade SP/20251007_180002-800w.webp';
+import mclarenMain from './McLaren 570s/20240702_073956.webp';
+import mclarenMain400 from './McLaren 570s/20240702_073956-400w.webp';
+import mclarenMain800 from './McLaren 570s/20240702_073956-800w.webp';
+import fiat500Main from './Fiat 500/IMG_20250610_215338.webp';
+import fiat500Main400 from './Fiat 500/IMG_20250610_215338-400w.webp';
+import fiat500Main800 from './Fiat 500/IMG_20250610_215338-800w.webp';
+import jeepWranglerMain from './Jeep Wrangler/Screenshot 2025-08-27 124716.webp';
 
-// McLaren 570s Spider Images
-import mclaren570sNewMain from './McLaren 570s/20240702_073956.jpg';
-import mclaren570sNewImg1 from './McLaren 570s/20240702_072819 (1).jpg';
-import mclaren570sNewImg2 from './McLaren 570s/20240702_131258.jpg';
-import mclaren570sNewImg3 from './McLaren 570s/20240702_131312.jpg';
-import mclaren570sNewImg5 from './McLaren 570s/20240702_073937.jpg';
+// Team Images - loaded on home page (below fold, lazy)
+import teamChad from './Team/Screenshot 2025-05-17 143859.webp';
+import teamDara from './Team/Screenshot 2025-05-17 143848.webp';
+import teamMascots from './Team/Screenshot 2025-05-17 143836.webp';
 
-// Fiat 500 Images
-import fiat500Main from './Fiat 500/IMG_20250610_215338.jpg';
-import fiat500Img1 from './Fiat 500/IMG_20250610_215342.jpg';
-import fiat500Img2 from './Fiat 500/IMG_20250610_215349.jpg';
-import fiat500Img3 from './Fiat 500/IMG_20250610_215353.jpg';
-
-// Jeep Wrangler Images
-import jeepWranglerImg2 from './Jeep Wrangler/IMG_20250617_151937 (1).jpg';
-import jeepWranglerMain from './Jeep Wrangler/IMG_20250617_151937.jpg';
-import jeepWranglerNewImg from './Jeep Wrangler/Screenshot 2025-08-27 124716.png';
-
-// Team Images
-import teamChad from './Team/Screenshot 2025-05-17 143859.png';
-import teamDara from './Team/Screenshot 2025-05-17 143848.png';
-import teamMascots from './Team/Screenshot 2025-05-17 143836.png';
-
-// Logo Image
-import logoImage from './Logo/RadRides_Logo-removebg-preview.png';
+const makeSrcSet = (w400, w800, wFull) => `${w400} 400w, ${w800} 800w, ${wFull} 1920w`;
 
 // High-quality fallback images for better reliability
 const highQualityFallbacks = {
@@ -81,62 +62,39 @@ const highQualityFallbacks = {
   ]
 };
 
+// Dynamic imports for car detail page images - only loaded when needed
+export const carImageLoaders = {
+  c8Corvette: () => import('./C8 Corvette/images-c8.js').then(m => m.default),
+  escalade: () => import('./Escalade SP/images-escalade.js').then(m => m.default),
+  mclaren570s: () => import('./McLaren 570s/images-mclaren.js').then(m => m.default),
+  fiat500: () => import('./Fiat 500/images-fiat.js').then(m => m.default),
+  jeepWrangler: () => import('./Jeep Wrangler/images-jeep.js').then(m => m.default),
+};
+
 export const images = {
   c8Corvette: {
-    main: c8Corvette1000068220,
-    DSC01405: c8CorvetteDSC01405,
-    DSC01434: c8CorvetteDSC01434,
-    gallery: [
-      c8Corvette1000068220,      // 1st - 1000068220.jpg
-      c8CorvetteDSC01434,        // 2nd - DSC01434.jpg
-      c8CorvetteMain,            // 3rd - Corvette sunny photo.webp
-      c8Corvette1000068217,      // 4th - 1000068217.jpg
-      c8Corvette1000068218,      // 5th - 1000068218.jpg
-      c8Corvette1000068219,      // 6th - 1000068219.jpg
-      c8CorvetteDSC01405         // 7th - DSC01405.jpg
-    ],
+    main: c8CorvetteMain,
+    mainSrcSet: makeSrcSet(c8CorvetteMain400, c8CorvetteMain800, c8CorvetteMain),
     fallbacks: highQualityFallbacks.corvette
   },
   escalade: {
-    main: escaladeNewCard,
-    gallery: [
-      escaladeNewPrimary,        // 1st - 20251007_180143.jpg (NEW COVER)
-      escaladeNew2024_1,         // 2nd - 20251007_180053.jpg (NEW)
-      escaladeNew2024_2,         // 3rd - 20251007_180002.jpg (NEW)
-      escaladeNew2024_3,         // 4th - 20240628_065940.jpg (NEW)
-      escaladeNew2024_4,         // 5th - 20240627_200027.jpg (NEW)
-      escaladeNew2024_5,         // 6th - 20240627_200020.jpg (NEW)
-    ],
+    main: escaladeMain,
+    mainSrcSet: makeSrcSet(escaladeMain400, escaladeMain800, escaladeMain),
     fallbacks: highQualityFallbacks.rrCullinan
   },
   mclaren570s: {
-    main: mclaren570sNewMain,
-    gallery: [
-      mclaren570sNewMain,        // 1st - 20240702_073956.jpg
-      mclaren570sNewImg1,        // 2nd - 20240702_072819 (1).jpg
-      mclaren570sNewImg2,        // 3rd - 20240702_131258.jpg
-      mclaren570sNewImg3,        // 4th - 20240702_131312.jpg
-      mclaren570sNewImg5         // 5th - 20240702_073937.jpg
-    ],
+    main: mclarenMain,
+    mainSrcSet: makeSrcSet(mclarenMain400, mclarenMain800, mclarenMain),
     fallbacks: highQualityFallbacks.mclaren
   },
   fiat500: {
     main: fiat500Main,
-    gallery: [
-      fiat500Main,               // 1st - IMG_20250610_215338.jpg
-      fiat500Img1,               // 2nd - IMG_20250610_215342.jpg
-      fiat500Img2,               // 3rd - IMG_20250610_215349.jpg
-      fiat500Img3                // 4th - IMG_20250610_215353.jpg
-    ],
+    mainSrcSet: makeSrcSet(fiat500Main400, fiat500Main800, fiat500Main),
     fallbacks: highQualityFallbacks.fiat
   },
   jeepWrangler: {
     main: jeepWranglerMain,
-    gallery: [
-      jeepWranglerNewImg,        // 1st - Screenshot 2025-08-27 124716.png
-      jeepWranglerImg2,          // 2nd - IMG_20250617_151937 (1).jpg
-      jeepWranglerMain           // 3rd - IMG_20250617_151937.jpg
-    ],
+    mainSrcSet: '',
     fallbacks: highQualityFallbacks.jeep
   },
   team: {

@@ -9,6 +9,7 @@ export default function CarDetail() {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(false);
+  const [galleryImages, setGalleryImages] = useState([]);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [formData, setFormData] = useState({
     request_type: 'booking',
@@ -23,12 +24,21 @@ export default function CarDetail() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Dynamically load gallery images for this car
+  useEffect(() => {
+    if (car?.imageLoader) {
+      car.imageLoader().then(carImages => {
+        setGalleryImages(carImages.gallery || []);
+      });
+    }
+  }, [car?.imageLoader]);
+
   if (!car) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Car not found</h1>
-          <button 
+          <button
             onClick={() => navigate('/')}
             className="text-blue-600 hover:text-blue-700"
           >
@@ -39,8 +49,11 @@ export default function CarDetail() {
     );
   }
 
-  const images = car.images || [];
+  const images = galleryImages.length > 0 ? galleryImages : (car.image ? [car.image] : []);
   const currentImage = images[currentImageIndex];
+  const currentSrc = typeof currentImage === 'object' ? currentImage.src : currentImage;
+  const currentSrcSet = typeof currentImage === 'object' ? currentImage.srcSet : '';
+  const getSrc = (img) => typeof img === 'object' ? img.src : img;
 
   const nextImage = () => {
     if (images.length > 1) {
@@ -224,7 +237,9 @@ export default function CarDetail() {
         <div className="relative w-full h-full overflow-hidden">
           {currentImage && (
             <img
-              src={currentImage}
+              src={currentSrc}
+              srcSet={currentSrcSet || undefined}
+              sizes="100vw"
               alt={car.name}
               className={`w-full h-full object-cover object-center transition-opacity duration-300 ${
                 isImageLoading ? 'opacity-70' : 'opacity-100'
@@ -330,7 +345,7 @@ export default function CarDetail() {
                   }`}
                 >
                   <img
-                    src={image}
+                    src={getSrc(image)}
                     alt={`${car.name} view ${index + 1}`}
                     className="w-full h-full object-cover"
                     loading="lazy"

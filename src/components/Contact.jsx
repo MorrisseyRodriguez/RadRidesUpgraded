@@ -3,8 +3,8 @@ import { Phone, Mail, Instagram, Send, MapPin, Clock, X } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useLocation } from 'react-router-dom';
 import DateRangePicker from './ui/DateRangePicker';
-import corvetteBgImage from '../assets/C8 Corvette/DSC01434.jpg';
-import logoImage from '../assets/Logo/RadRides Logo-Picsart-BackgroundRemover.jpg';
+import corvetteBgImage from '../assets/C8 Corvette/DSC01434.webp';
+import logoImage from '../assets/Logo/RadRides Logo-Picsart-BackgroundRemover.webp';
 
 // Vehicle options for the dropdown
 const vehicleOptions = [
@@ -188,6 +188,7 @@ export default function Contact() {
         <img 
           src={corvetteBgImage}
           alt="Corvette background"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70"></div>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, ArrowRight, ArrowLeft, Star } from 'lucide-react';
 import clsx from 'clsx';
-import logoImage from '../assets/Logo/RadRides Logo-Picsart-BackgroundRemover.jpg';
+import logoImage from '../assets/Logo/RadRides Logo-Picsart-BackgroundRemover.webp';
 
 export default function Hero() {
   const location = useLocation();

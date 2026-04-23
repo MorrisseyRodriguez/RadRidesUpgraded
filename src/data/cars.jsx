@@ -1,11 +1,11 @@
-import { images } from '../assets/images';
+import { images, carImageLoaders } from '../assets/images';
 
 export const carsData = {
   'mclaren-570s-spider': {
     name: 'McLaren 570S Spider',
     image: images.mclaren570s.main,
     fallbacks: images.mclaren570s.fallbacks,
-    images: images.mclaren570s.gallery,
+    imageLoader: carImageLoaders.mclaren570s,
     acceleration: '3.2s',
     horsepower: '562 HP',
     seats: 2,
@@ -23,7 +23,7 @@ export const carsData = {
     name: 'Corvette C8 Z06',
     image: images.c8Corvette.main,
     fallbacks: images.c8Corvette.fallbacks,
-    images: images.c8Corvette.gallery,
+    imageLoader: carImageLoaders.c8Corvette,
     acceleration: '2.6s',
     horsepower: '670 HP',
     seats: 2,
@@ -41,7 +41,7 @@ export const carsData = {
     name: 'Cadillac Escalade Sport Platinum',
     image: images.escalade.main,
     fallbacks: images.escalade.fallbacks,
-    images: images.escalade.gallery,
+    imageLoader: carImageLoaders.escalade,
     acceleration: '6.1s',
     horsepower: '420 HP',
     seats: 8,
@@ -59,7 +59,7 @@ export const carsData = {
     name: 'Fiat 500 Abarth',
     image: images.fiat500.main,
     fallbacks: images.fiat500.fallbacks,
-    images: images.fiat500.gallery,
+    imageLoader: carImageLoaders.fiat500,
     acceleration: '6.8s',
     horsepower: '160 HP',
     seats: 4,
@@ -75,9 +75,9 @@ export const carsData = {
   },
   'jeep-wrangler-rubicon-4xe': {
     name: 'Jeep Wrangler Rubicon 4xe',
-    image: images.jeepWrangler.gallery[0],
+    image: images.jeepWrangler.main,
     fallbacks: images.jeepWrangler.fallbacks,
-    images: images.jeepWrangler.gallery,
+    imageLoader: carImageLoaders.jeepWrangler,
     acceleration: '6.0s',
     horsepower: '375 HP',
     seats: 5,

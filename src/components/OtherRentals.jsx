@@ -22,7 +22,10 @@ export default function OtherRentals() {
             <div className="relative overflow-hidden bg-black h-80">
               <img 
                 src={images.fiat500.main}
+                srcSet={images.fiat500.mainSrcSet}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt="Fiat 500 Abarth"
+                loading="lazy"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-6 left-6">

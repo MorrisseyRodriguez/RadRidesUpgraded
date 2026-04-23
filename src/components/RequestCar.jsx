@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 import DateRangePicker from './ui/DateRangePicker';
-import logoImage from '../assets/Logo/RadRides Logo-Picsart-BackgroundRemover.jpg';
+import logoImage from '../assets/Logo/RadRides Logo-Picsart-BackgroundRemover.webp';
 
 // Vehicle options for the dropdown
 const vehicleOptions = [

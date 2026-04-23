@@ -117,7 +117,10 @@ function App() {
               <div className="relative overflow-hidden bg-black h-80">
                 <img 
                   src={images.mclaren570s.main}
+                  srcSet={images.mclaren570s.mainSrcSet}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   alt="McLaren 570S Spider"
+                  loading="lazy"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-6 left-6">
@@ -145,7 +148,10 @@ function App() {
               <div className="relative overflow-hidden bg-black h-80">
                 <img 
                   src={images.escalade.main}
+                  srcSet={images.escalade.mainSrcSet}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   alt="Cadillac Escalade Sport Platinum"
+                  loading="lazy"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-6 left-6">
